@@ -8,12 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
 
   constructor(private _http: HttpClient) {
-    this.getTask();
    }
 
-   getTask(){
-    let tempObservable = this._http.get('/tasks');
-    tempObservable.subscribe(data => console.log("Got our tasks!", data));
+  getTasks(){
+    return this._http.get('/tasks');
+  }
+  postToServer(num){
+    return this._http.post('/tasks', num);
   }
   
 }

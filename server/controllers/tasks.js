@@ -5,14 +5,11 @@ module.exports = {
     showAll: function(req, res){
         Task.find({}, function(err, tasks){  // name of the model
             if (err){
-                console.log(err);
                 res.json({message:"Error", error: err});
             }
             else{
-                res.json(tasks) 
-
+                res.json({message:"Success", data: tasks}) 
             }
-
         })
     },
     showOne: function(req, res){
@@ -22,7 +19,7 @@ module.exports = {
                 res.json({message:"Error", error: err});
             }
             else{
-                res.json(task);
+                res.json({message:"Success", data: tasks}) 
             }
         })
     },
@@ -39,7 +36,7 @@ module.exports = {
                 res.json({message:"Error", error:err})
             }
             else{
-                res.json(task)
+                res.json({message:"Success", data: tasks}) 
             }
         })
 
